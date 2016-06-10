@@ -1,3 +1,13 @@
+####
+#
+# cairobase.py
+#
+# Author martin.mcbride@axlesoft.com
+# Copyright schoolcoders.com 2016
+# MIT licence
+#
+####
+
 import cairo
 
 def save(draw, filename, width=500, height=500, fill=(1, 1, 1),
@@ -30,6 +40,8 @@ def save(draw, filename, width=500, height=500, fill=(1, 1, 1),
     ctx.move_to(-xr/2, 0)        
     ctx.line_to(xr/2, 0)        
     ctx.stroke()
+    ctx.set_source_rgb(0,0,0)
+    ctx.set_line_width(.1)
     draw(ctx)
     surface.write_to_png(filename)
 
